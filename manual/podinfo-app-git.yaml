@@ -4,7 +4,7 @@ metadata:
   name: podinfo-git
   namespace: argocd
 spec:
-  project: default
+  project: pangarabbit
   destination:
     namespace: default #update namespace name if you wish
     name: in-cluster #update cluster name if its different
