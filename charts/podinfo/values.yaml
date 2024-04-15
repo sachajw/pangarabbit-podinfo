@@ -1,6 +1,6 @@
 # Default values for podinfo.
 
-replicaCount: 1
+replicaCount: 3
 logLevel: info
 host: #0.0.0.0
 backend: #http://backend-podinfo:9898/echo
@@ -113,9 +113,10 @@ securityContext: {}
 
 ingress:
   enabled: false
-  className: ""
+  className: "traefik"
   additionalLabels: {}
-  annotations: {}
+  annotations:
+    {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:

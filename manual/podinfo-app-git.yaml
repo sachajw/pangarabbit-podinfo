@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: podinfo-git
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    namespace: default #update namespace name if you wish
+    name: in-cluster #update cluster name if its different
+  source:
+    repoURL: "git@github.com:sachajw/pangarabbit-podinfo.git" #replace with your username
+    path: charts/podinfo
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml #any custom value file you want to apply.
